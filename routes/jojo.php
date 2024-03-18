@@ -19,16 +19,31 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 
     // use Illuminate\Support\Facades\Route;
+
+Route::match(['put','patch','post'], '/atal ang alaw', function () {
+    return 'super ewan!';
+    });
  
 Route::get('/greeting', function (){
     return "Hello madlang people, mabuhay!";
-}
+});
 
-// Route::match(['put', 'patch', 'post'] function () {
-//     return "Hello madlang people, mabuhay!";
+Route::post('/postMethod', function (Request $request) {
+    return "This is created using POST method";
+});
 
-// });
+Route::put('/putMethod', function (Request $request) {
+    return "This is created using PUT method";
+});
 
+Route::patch('/patchMethod', function (Request $request) {
+    return "This is created using PATCH method";
+});
 
+Route::delete('/deleteMethod', function (Request $request) {
+    return "This is created using DELETE method";
+});
 
-);
+Route::options('/optionsMethod', function (Request $request) {
+    return "This is created using OPTIONS method";
+});
